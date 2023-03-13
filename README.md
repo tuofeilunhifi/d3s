@@ -31,7 +31,7 @@ git clone https://github.com/alanlukezic/d3s.git .
 #### Install dependencies
 Run the installation script to install all the dependencies. You need to provide the conda install path (e.g. ~/anaconda3) and the name for the created conda environment (here ```pytracking```).  
 ```bash
-bash install.sh conda_install_path pytracking
+bash install.sh ~/anaconda3/ d3s
 ```
 To install the dependencies on a Windows machine, use the `install.bat` script.
 The pre-trained network for the D3S is not part of this repository. You can download it [here](http://data.vicos.si/alanl/d3s/SegmNet.pth.tar).
