@@ -49,7 +49,7 @@ def sample_patch(im: torch.Tensor, pos: torch.Tensor, sample_sz: torch.Tensor, o
     br = posl + szl/2
 
     # Get image patch
-    im_patch = F.pad(im2, (-tl[1].item(), br[1].item() - im2.shape[3] + 1, -tl[0].item(), br[0].item() - im2.shape[2] + 1), 'replicate')
+    im_patch = F.pad(im2, (int(-tl[1].item()), int(br[1].item() - im2.shape[3] + 1), int(-tl[0].item()), int(br[0].item() - im2.shape[2] + 1)), 'replicate')
 
     if output_sz is None or (im_patch.shape[-2] == output_sz[0] and im_patch.shape[-1] == output_sz[1]):
         return im_patch

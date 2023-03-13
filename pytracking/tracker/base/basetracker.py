@@ -25,6 +25,7 @@ class BaseTracker:
 
     def track_sequence(self, sequence):
         """Run tracker on a sequence."""
+        # sequence.frames 包含所有图片路径 sequence.init_state包含第一帧的包围框
 
         # Initialize
         image = self._read_image(sequence.frames[0])

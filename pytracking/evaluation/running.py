@@ -17,14 +17,7 @@ def run_sequence(seq: Sequence, tracker: Tracker, debug=False):
 
     print('Tracker: {} {} {} ,  Sequence: {}'.format(tracker.name, tracker.parameter_name, tracker.run_id, seq.name))
 
-    if debug:
-        tracked_bb, exec_times = tracker.run(seq, debug=debug)
-    else:
-        try:
-            tracked_bb, exec_times = tracker.run(seq, debug=debug)
-        except Exception as e:
-            print(e)
-            return
+    tracked_bb, exec_times = tracker.run(seq, debug=debug)
 
     tracked_bb = np.array(tracked_bb).astype(float)
     exec_times = np.array(exec_times).astype(float)
